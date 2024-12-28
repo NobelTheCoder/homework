@@ -2,6 +2,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
+import NavBar from './components/nav';
+
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState(""); // For displaying upload status
@@ -35,10 +37,7 @@ function App() {
 
   return (
     <>
-      <div className="nav">
-        <p>Upload</p>
-        <button>Contact Us</button>
-      </div>
+    <NavBar />
       <h1 id="Title">HomeWork Upload</h1>
       <div className="main">
         <input

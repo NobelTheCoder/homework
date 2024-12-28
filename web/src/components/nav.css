@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Vertically center items */
+    background-color: #333;
+    /* Dark gray background */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Add some padding */
+    width: 100%;
+    /* Full width */
+}
+
+.nav p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav button {
+    background-color: #555;
+    /* Darker gray button */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.nav button:hover {
+    background-color: #777;
+    /* Lighter gray on hover */
+}
+
+/* Style for h1 */
+#Title {
+    text-align: center;
+    /* Center horizontally */
+    margin-top: 20px;
+    /* Add spacing above */
+    font-size: 32px;
+    /* Adjust font size */
+    color: #333;
+    /* Dark gray color */
+}
