@@ -5,6 +5,6 @@ import Home from './pages/Home.jsx'
 import NavBar from './components/nav.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavBar />
+    <Home />
   </StrictMode>,
 )
