@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-
 import NavBar from './components/nav';
+
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-    <NavBar />
+    <NavBar name="Home" link=""/>
       <h1 id="Title">HomeWork Upload</h1>
       <div className="main">
         <input

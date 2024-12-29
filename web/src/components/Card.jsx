@@ -1,5 +1,7 @@
 import React from "react";
+import NavBar from "./nav.jsx";
 import "./Card.css";
+
 
 const Card = () => {
   const handleButtonClick = () => {
@@ -7,6 +9,8 @@ const Card = () => {
   };
 
   return (
+    <>
+    <div className="mm">
     <div className="card">
       {/* Subject */}
       <div className="subject">Math Subject</div>
@@ -29,6 +33,8 @@ const Card = () => {
         &gt;
       </button>
     </div>
+    </div>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ function Home(){
 
     return(
         <>
-        <NavBar/>
+        <NavBar name="Home" link=""/>
         <Card/>
         <Card/>
         <Card/>
