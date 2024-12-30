@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./details.css";
-import NavBar from '../components/nav'
+import NavBar from '../components/nav';
+
 function Zapp() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState(""); // For displaying upload status
@@ -31,6 +32,7 @@ function Zapp() {
       setUploadStatus("BAD - Please select a file before submitting.");
     }
   };
+
   return (
     <div className="main">
       <input
@@ -48,21 +50,28 @@ function Zapp() {
         </div>
       )}
     </div>
-  )
+  );
 }
+
 const Detail = () => {
-  const [variable, setVariable] = useState(1); // Control conditional rendering
+  const [variable, setVariable] = useState(2); // Control conditional rendering
   const mark = 89; // Example mark value
 
   // Determine the status text based on the variable
-  const statusText = variable === 0 ? "Submitted" : "Not Submitted";
-
-  // Function to calculate the speedometer color
-  const getSpeedometerColor = (mark) => {
-    if (mark <= 50) return "red";
-    if (mark <= 70) return "yellow";
-    return "green";
+  const getStatusText = (variable) => {
+    switch (variable) {
+      case 0:
+        return { text: "Submitted", className: "submitted" };
+      case 1:
+        return { text: "Not Submitted", className: "not-submitted" };
+      case 2:
+        return { text: "Pending", className: "pending" };
+      default:
+        return { text: "Unknown", className: "unknown" };
+    }
   };
+
+  const { text: statusText, className: statusClass } = getStatusText(variable);
 
   return (
     <>
@@ -76,24 +85,24 @@ const Detail = () => {
           </p>
         </div>
 
-        {/* Feedback Section */}
-        <div className="feedback">
-          <h3>Feedback</h3>
-          <textarea
-            readOnly
-            value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur ligula at dui ultrices."
-          />
-        </div>
+        {/* Conditionally Render Feedback Section */}
+        {variable === 0 && (
+          <div className="feedback">
+            <h3>Feedback</h3>
+            <textarea
+              readOnly
+              value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur ligula at dui ultrices."
+            />
+          </div>
+        )}
 
         {/* Status */}
-        <div className="status">
+        <div className={`status ${statusClass}`}>
           <strong>Status:</strong> {statusText}
         </div>
 
-        {/* Speedometer */}
-
         {/* Conditional Rendering */}
-        {variable === 1 && <Zapp />}
+        {(variable === 1 || variable === 2) && <Zapp />}
       </div>
     </>
   );

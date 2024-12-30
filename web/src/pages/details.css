@@ -1,3 +1,4 @@
+
 .bd {
   width: 70vw;
   background-color: #fff;
@@ -28,10 +29,23 @@ textarea {
 
 .status {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
-  color: #333;
+  text-align: center;
 }
+
+.status.submitted {
+  color: green;
+}
+
+.status.not-submitted {
+  color: red;
+}
+
+.status.pending {
+  color: yellow;
+}
+
 /* Center the content in the main div */
 .main {
   display: flex;
