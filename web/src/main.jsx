@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
       
       <Routes>
         {/* Home page as "/" */}
-        <Route path="/" element={<Detail />} />
+        <Route path="/" element={<Home />} />
         
         {/* App page as "/app" */}
         

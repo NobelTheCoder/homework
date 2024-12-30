@@ -2,9 +2,10 @@ import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import NavBar from './components/nav';
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate(); // Move the hook inside the component
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState(""); // For displaying upload status
 

@@ -1,11 +1,12 @@
 import React from "react";
 import NavBar from "./nav.jsx";
 import "./Card.css";
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Card = () => {
+  const navigate = useNavigate(); // Move the hook inside the component
   const handleButtonClick = () => {
-    alert("Hi");
+    navigate('/dt'); // Navigate to the /app route
   };
 
   return (
